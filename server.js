@@ -2,20 +2,22 @@ var express = require('express');
 
 var app = express();
 
-var middleware = {
+var middleware = require('./middleware');
 
-    requiredAuthentication: function(req , res , next) {
+// var middleware = {
 
-        console.log('private authentication');
-        next();
-    },
-    logger: function(req , res , next) {
+//     requiredAuthentication: function(req , res , next) {
 
-        console.log('Logger' + req.method+ ' ' + req + ' ' + new Date());
-        next();
-    }
+//         console.log('private authentication');
+//         next();
+//     },
+//     logger: function(req , res , next) {
 
-};
+//         console.log('Logger' + req.method+ ' ' + req + ' ' + new Date());
+//         next();
+//     }
+
+// };
 
 
 //apply on all routes
