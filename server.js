@@ -4,6 +4,9 @@ var app = express();
 
 var middleware = require('./middleware');
 
+//heroku set this process.env.Port
+var PORT =process.env.PORT || 3000;
+
 // var middleware = {
 
 //     requiredAuthentication: function(req , res , next) {
@@ -40,6 +43,6 @@ res.send('About us!');
 
 app.use(express.static(__dirname + '/public'));
 
-app.listen(3000,function(){
-    console.log('Express server has been started');
+app.listen(PORT,function(){
+    console.log('Express server has been started on: ' + PORT);
 });
